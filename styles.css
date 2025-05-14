@@ -248,7 +248,6 @@ header {
     background: #f15a7d;
     color: #fff;
 }
-
 /* section services */
 .services {
     display: flex;
@@ -424,7 +423,6 @@ header {
     text-align: center;
     justify-content: center;
 }
-
 .bar h2{
     color: #1e2076;
     font-size: 2.5rem;
@@ -440,8 +438,6 @@ header {
     font-size: 1rem;
     margin-bottom: 0%;
 }
-/*-----------------------------------------*/
-
 /*-------------------------Grille des logos-----------------------*/
 .clients h2 {
     color: #1e2076;
@@ -475,7 +471,6 @@ header {
     transform: scale(1.1); /* Zoom léger */
     filter: grayscale(0%); /* Remettre en couleur */
 }
-
 /*---------------------Section Projets----------------- */
 .projects {
     padding: 20px 0;
@@ -572,7 +567,6 @@ header {
     background: #f15a7d;
     color: #fff;
 }
-
 /*----------------------------Footer---------------------------*/
 footer {
     background: url('images/footer.jpg') center/cover no-repeat;
@@ -616,7 +610,6 @@ footer {
     font-size: 14px;
     opacity: 0.7;
 }
-
 /*-------------------------l'agence--------------------*/
 .heropage {
     height: 40vh;
@@ -640,7 +633,6 @@ footer {
     height: 39%;
     background: rgba(0, 0, 0, 0.3); /* Opacité de 50% */
 }
-
 /*--------------------formulaire----------------*/
 .container {
     background: white;
@@ -723,21 +715,35 @@ button:hover {
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .logo img {
-        width: 80px;
-        height: 50px;
-        margin-left: 80px;
+        width: 200px;
+        height: auto;
+        margin-left: 10px;
+        margin-bottom: 0px;
+        margin-top: 5%;
     }
-    
+    header {
+        display: flex;
+        background: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        color: #fff;
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
     .nav-links {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 100px;
         margin-top: -10px;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: url('images/menu.JPG') center/cover no-repeat;
+        background-color: #fff;
         padding: 10px;
         opacity: 0; /* Invisible au début */
         transform: translateX(-100%); /* Déplacé vers la gauche */
@@ -746,25 +752,75 @@ button:hover {
         text-align: center;
         list-style: none;
     }
-
     .nav-links.active {
         display: flex;
     }
-
     .nav-links li {
         margin: 10px 15px;
     }
-
     .nav-links a {
         text-decoration: none;
         color: #2A327B;
         font-size: 18px;
     }
-
     .hamburger {
         display: block; /* Affichage sur petit écran */
+        margin-left: -10px;
     }
-
+    .hamburger::before,
+    .hamburger::after,
+    .hamburger span {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 2px;
+        background: #FFF;
+        transition: 0.3s ease-in-out;
+    }
+    /* Bouton de réservation */
+    header .btn-devis {
+        display: none;
+    }
+    .btn-devis {
+        background: #FFF;
+        color: #1e2076;
+        border: 1px solid #FFF;
+        padding: 3px 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+        font-size: 0.9rem;
+        border-radius: 5px;
+    }
+    .btn-devis:hover {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+    /* Réservation */
+    .reservation {
+        background: #2A327B;
+        color: #fff;
+        padding: 40px;
+        margin-top: 30px;
+    }
+    .reservation-container{
+        display: block;
+        padding: 0%;
+        gap: 100px;
+        text-align: center;
+        justify-content: center;
+    }
+    .reservation-content{
+        display: block;
+    }
+    .reservation-content h2 {
+        color: #fff;
+        margin-top: 15px;
+        font-size: 1rem;
+        font-weight: normal;
+        margin-bottom: 3%;
+    }
     /* Bouton de réservation */
     .btn-reservation {
         background: #2A327B;
@@ -775,29 +831,25 @@ button:hover {
         font-weight: bold;
         transition: 0.3s;
     }
-
     .btn-reservation:hover {
         background: #fff;
         color: #2A327B;
         border: 1px solid #2A327B;
     }
-
     /* Section Hero */
     .hero {
-        height: 94vh;
-        background: url('images/restaurant.JPG') center/cover no-repeat;
-        display: flex;
+        height: 100vh;
+        background: url('images/heropage.jpg') center/cover no-repeat;        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: white;
         padding: 20px;
-        margin-top: 40px;
+        margin-top: -82px;
         z-index: 1;
 
     }
-
     /* Overlay sombre */
     .hero .overlay {
         position: absolute;
@@ -807,23 +859,436 @@ button:hover {
         height: 100%;
         background: rgba(0, 0, 0, 0.3); /* Opacité de 50% */
     }
-
     /* Contenu du hero (au-dessus de l’overlay) */
     .hero-content {
         position: relative;
         z-index: 2; /* Assure que le texte reste au-dessus */
     }
-
     .hero h1 {
-        font-size: 40px;
+        font-size: 2rem;
         margin-bottom: 10px;
     }
-
     .hero p {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 20px;
     }
-
+    /* section a propos */
+    .about {
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 0%;
+    }
+    .about h2 {
+        color: #1e2076;
+        font-size: 1.5rem;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    .about h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    /*--------------------------------------*/
+    .about h3{
+        color: #f15a7d;
+        font-size: 16px;
+        margin-top: 2%;
+        margin-bottom: 10%;
+        text-transform: uppercase;
+    }
+    /*--------------------------------------*/
+    .about-content{
+        display: inline-block;
+    }
+    .about-content img {
+        margin-top: 0%;
+        width: 100%;
+        height: 150px;
+        margin-left: 0%;
+        padding: 10px;
+    }
+    .about-text {
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        padding: 5%;
+        margin-left: 0%;
+        margin-top: -7%;
+    }
+    .about-content p{
+        font-size: 1rem;
+    }
+    /* section services */
+    .services {
+        display: block;
+        margin-top: 10%;
+    }
+    .services-text {
+        width: 100%;
+        text-align: left;
+        padding: 5%;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    .services-text p{
+        font-size: 16px;
+        color: #fff;
+    }
+    .services-text h2 {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 5%;
+        margin-top: -5%;
+    }
+    .services-text h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    .services-text h3 {
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 1%;
+    }
+    .services-text ul li{
+        color: #fff;
+        font-size: 16PX;
+        margin-left: 10%;
+        margin-top: 3%;
+    }
+    .logo-service img {
+        width: 50%;
+        height: auto;
+        margin-left: 20%;
+        padding: 10px;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+    .img-service img{
+        margin-top: 0%;
+        width: 100%;
+        height: auto;
+        margin-left: 0%;
+        padding: 10px;
+    }
+    .btn-service {
+        display: inline-block;
+        padding: 10px 10px;
+        background: transparent;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        border: 1px solid #fff;
+        margin-top: 15px;
+    }
+    .btn-service:hover {
+        background: #f15a7d;
+        color: #fff;
+        border: 1px solid #f15a7d;
+    }
+    /*---------------------------------------------*/
+    .servicesw-text {
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        padding: 5%;
+        margin-left: 0%;
+    }
+    .servicesw-text p{
+        font-size: 1rem;
+        color: #000;
+    }
+    .servicesw-text h2 {
+        color: #1e2076;
+        font-size: 1.5rem;
+        margin-bottom: 2%;
+    }
+    .servicesw-text h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    .servicesr {
+        display: block;
+        background: #1e2076;
+        margin-top: 0%;
+    }
+    .servicesr-text {
+        margin-top: 1%;
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        padding: 5%;
+        margin-left: 0%;
+    }
+    .servicesr-text p{
+        font-size: 16px;
+        color: #fff;
+    }
+    .servicesr-text h2 {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 0%;
+    }
+    .servicesr-text h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    .img-servicer img{
+        margin-top: 10%;
+        width: 100%;
+        height: 200px;
+        margin-left: 0%;
+        padding: 10px;
+        margin-bottom: 0%
+    }
+    /*-----------------------------------------*/
+    .barcontact{
+        background: #fff;
+        text-align: center;
+        justify-content: center;
+    }
+    .bar h2{
+        color: #1e2076;
+        font-size: 1Rem;
+        margin-top: 5%;
+        margin-bottom: 0%;
+    }
+    .bar h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    .bar p{ 
+        color: #000;
+        font-size: 16px;
+        margin-bottom: 0%;
+    }
+    .servicesri {
+        display: block;
+        background: #fff;
+        margin-bottom: -10%;
+    }
+    .img-servicesri img{
+        margin-top: 10%;
+        width: 100%;
+        height: auto;
+        margin-left: 0%;
+        padding: 5px;
+    }
+    .servicesri-text {
+        margin-top: 3%;
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        padding: 5%;
+        margin-left: 0%;
+    }
+    .servicesri-text p{
+        font-size: 16px;
+        color: #000;
+    }
+    .servicesri-text h2 {
+        color: #1e2076;
+        font-size: 1.5rem;
+        margin-bottom: 0%;
+    }
+    .servicesri-text h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    /*-------------------------------------*/
+    .number{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-top: 2%;
+    }
+    .separator {
+        width: 2px;
+        height: 70px;
+        background-color: #fecd1a; /* Couleur de la barre */
+        margin: 0 30px;
+    }
+    .number .one h1{
+        font-size: 3rem;
+        color: #fecd1a;
+    }
+    .number .two h1{
+        font-size: 3rem;
+        color: #fecd1a;
+    }
+    /*-------------------------------------*/
+    .btn-about {
+        display: inline-block;
+        padding: 10px 10px;
+        background: transparent;
+        color: #f15a7d;
+        text-decoration: none;
+        font-size: 1rem;
+        border: 1px solid #f15a7d;
+        margin-top: 20px;
+    }
+    /*-------------------------Grille des logos-----------------------*/
+    .clients h2 {
+        color: #1e2076;
+        font-size: 1.5rem;
+        margin-top: 2%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+    .clients h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    .clients-logos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 logos par ligne */
+        gap: 20px; /* Espacement entre les logos */
+        justify-items: center; /* Centrer les logos */
+        align-items: center;
+        max-width: 50%;
+        margin: 5%;
+    }
+    /* Style des images des logos */
+    .clients-logos img {
+        max-width: 60px; /* Taille max des logos */
+        height: auto;
+        filter: grayscale(100%); /* Effet noir & blanc */
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .no img{
+        display: none;
+    }
+    /*---------------------Section Projets----------------- */
+    .projects {
+        padding: 20px 0;
+        text-align: center;
+        background-color: #fff;
+        margin-bottom: 5%;
+    }
+    .projects h2 {
+        color: #1e2076;
+        font-size: 1.5rem;
+        margin-top: 0%;
+        text-align: center;
+    }
+    .projects h2 i{
+        color: #fecd1a;
+        font-size: 3rem;
+    }
+    .projects p{
+        font-size: 16px;
+        margin-bottom: 40px;
+        color: #000;
+    }
+    /* Grille de projets */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* 4 colonnes */
+        gap: 30px;
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+    }
+    /* Conteneur de l'image et des informations */
+    .project-thumb {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1px;
+        width: 100%;  /* Assure que l'image remplisse tout le conteneur */
+        height: 250px;  /* Fixe une hauteur pour toutes les images */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Information du projet */
+    .project-info h3 {
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+    .btn-services {
+        display: inline-block;
+        padding: 10px 10px;
+        background: transparent;
+        color: #f15a7d;
+        text-decoration: none;
+        font-size: 16px;
+        border: 1px solid #f15a7d;
+        margin-top: 15px;
+    }
+    /*----------------------------Footer---------------------------*/
+    .footer-container {
+        display: block;
+        justify-content: space-bewtween;
+        flex-wrap: wrap;
+        gap: 300px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    /*-------------------------l'agence--------------------*/
+    .heropage {
+        height: 40vh;
+        background: url('images/heropage.jpg') center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        margin-top: -25%;
+        z-index: 1;
+    }
+    .container {
+        background: white;
+        padding: 5%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        width: 320px;
+        text-align: center;
+        margin-top: 80px;
+        margin-left: 5%;
+        margin-bottom: 50px;
+    }
+    .container h1 {
+        margin-bottom: 20px;
+        color: #2A327B;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        text-align: left;
+        margin: 5px 0;
+    }
+    input, select, button {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        color: #000;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    button {
+        background-color: #1e2076;
+        color: white;
+        border: 1px solid #1e2076;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #fff;
+        color: #1e2076;
+        border: 1px solid #1e2076;
+    }
+    .hidden {
+        display: none;
+        color: green;
+        font-weight: bold;
+    }
+    .container h4 {
+        margin: 20px;
+        color: #5c5c5c;
+        font-size: 18px;
+    }
     .btn {
         display: inline-block;
         padding: 10px 20px;
@@ -835,7 +1300,6 @@ button:hover {
         box-shadow: 0 2px 5px rgb(255, 255, 255, 0.3);
         font-weight: bold;
     }
-
     .btn:hover {
         background: #fff;
         color: #2A327B;;
