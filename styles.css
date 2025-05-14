@@ -1140,7 +1140,7 @@ button:hover {
     }
     .clients-logos {
         display: grid;
-        grid-template-columns: repeat((, 1fr); /* 4 logos par ligne */
+        grid-template-columns: repeat(5, 1fr); /* 4 logos par ligne */
         gap: 20px; /* Espacement entre les logos */
         justify-items: center; /* Centrer les logos */
         align-items: center;
